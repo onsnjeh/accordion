@@ -1,0 +1,37 @@
+<ul id="accordion" class="accordion" >
+  <li *ngFor="let menu of menus; let i = index" 
+    [class.active]="menu.active">
+    <div class="menu" (click)="toggle(i)">
+      <i [class]="menu.iconClass"></i>
+      {{ menu.name }}
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <ul class="submenu" #submenu 
+      [style.height.px]="menu.active ? submenu.scrollHeight : 0">
+      <li *ngFor="let submenu of menu.submenu">
+        <a [href]="submenu.url">{{ submenu.name }}</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<!-- <nav>
+  <ul>
+    <li *ngFor="let item of menuItems">
+      <a href="#" (click)="toggleAccordion(item)">
+        {{ item.title }}
+        <i [ngClass]="{'fa fa-chevron-up': item.active, 'fa fa-chevron-down': !item.active}"></i>
+      </a>
+      <ul *ngIf="item.active">
+        <li *ngFor="let subItem of item.subItems">
+          <a href="#">{{ subItem.title }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav> -->
+<!-- <div *ngFor="let item of filteredData; let i = index;">
+ <button class="accordion" (click)="toggle(i)">{{ item.title }}</button>
+ <div class="panel" *ngIf="item.expanded">
+   <p>{{ item.description }}</p>
+ </div>
+</div> -->

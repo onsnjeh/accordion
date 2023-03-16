@@ -1,0 +1,19 @@
+<H1>2</H1>
+<div class="menu">
+ <ng-container *ngFor="let item of menuItems">
+   <div *ngIf="!item.roles || userRoles.some(role => item.roles.includes(role))">
+     <div class="menu-header" (click)="item.expanded = !item.expanded">
+       {{ item.title }}
+       <i class="fas" [ngClass]="item.expanded ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+     </div>
+     <div class="menu-content" *ngIf="item.expanded">
+       <ul>
+         <li *ngFor="let subitem of item.subitems" (click)="selectSubitem(subitem)">
+           {{ subitem.title }}
+         </li>
+       </ul>
+     </div>
+   </div>
+ </ng-container>
+</div> 
+<!-- -->

@@ -1,0 +1,62 @@
+.accordion-menu {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+}
+
+.accordion-menu > li {
+ position: relative;
+ padding: 0;
+ margin: 0;
+}
+
+.accordion-menu > li > a {
+ display: block;
+ padding: 15px;
+ color: #333;
+ background-color: #f7f7f7;
+ border-bottom: 1px solid #ddd;
+ cursor: pointer;
+ text-decoration: none;
+}
+
+.accordion-menu > li > a:hover {
+ background-color: #e3e3e3;
+}
+
+.accordion-menu > li > a > i {
+ margin-right: 10px;
+}
+
+.accordion-menu > li > a > .caret {
+ position: absolute;
+ top: 50%;
+ right: 10px;
+ transform: translateY(-50%);
+ border: 4px solid transparent;
+ border-top: 4px solid #333;
+}
+
+.accordion-menu > li > .sub-menu {
+ display: none;
+}
+
+.accordion-menu > li > .sub-menu.active {
+ display: block;
+}
+
+.accordion-menu > li > .sub-menu > li > a {
+ display: block;
+ padding: 10px 15px;
+ color: #333;
+ text-decoration: none;
+}
+
+.accordion-menu > li > .sub-menu > li > a:hover {
+ background-color: #e3e3e3;
+}
+
+/* Hide menu items that user doesn't have access to */
+.accordion-menu > li > .sub-menu > li > a[hidden] {
+ display: none;
+}
